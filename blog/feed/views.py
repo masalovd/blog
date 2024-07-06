@@ -25,6 +25,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'feed/home.html'
     context_object_name = 'posts'
+    paginate_by = 5
 
 
 class PostDetailView(DetailView):
