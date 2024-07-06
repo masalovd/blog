@@ -1,0 +1,26 @@
+{% extends 'feed/base.html' %}
+
+{% block content %}
+    <article class="media content-section">
+        <div class="row">
+            <div class="col-md-auto">
+                <img class="rounded-circle article-img img-fluid" src="{{ object.user.profile.image.url }}" alt="User Image">
+            </div>
+            <div class="col-md-auto">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="#">{{ object.user }}</a>
+                        <small class="text-muted">{{ object.created_at|date:"F d, Y" }}</small>
+                    </div>
+                    <h2>{{ object.title }}</h2>
+                    <p class="article-content">{{ object.content }}</p>
+
+                    <div class="btn-group" role="group" aria-label="Post Actions">
+                        <a class="btn btn-outline-primary" href="{% url 'post-update' object.pk %}">Update</a>
+                        <a class="btn btn-outline-danger" href="{% url 'post-delete' object.pk %}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock content %}
