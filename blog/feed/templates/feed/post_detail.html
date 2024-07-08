@@ -14,11 +14,13 @@
                     </div>
                     <h2>{{ object.title }}</h2>
                     <p class="article-content">{{ object.content }}</p>
-
-                    <div class="btn-group" role="group" aria-label="Post Actions">
-                        <a class="btn btn-outline-primary" href="{% url 'post-update' object.pk %}">Update</a>
-                        <a class="btn btn-outline-danger" href="{% url 'post-delete' object.pk %}">Delete</a>
-                    </div>
+                    
+                    {% if object.user == request.user %}
+                        <div class="btn-group" role="group" aria-label="Post Actions">
+                            <a class="btn btn-outline-primary" href="{% url 'post-update' object.pk %}">Update</a>
+                            <a class="btn btn-outline-danger" href="{% url 'post-delete' object.pk %}">Delete</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
