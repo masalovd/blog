@@ -17,9 +17,6 @@ This project is a blog application built using pure Django. It allows users to r
 - **View Posts by User**: Users can view all posts created by a specific user.
 - **CRUD Operations**: Basic Create, Read, Update, and Delete operations are implemented for blog posts.
 
-### Signals
-- **Custom Signals**: The application uses Django signals to perform specific actions automatically when certain events occur (e.g., sending notifications when a new post is created).
-
 ## Installation
 
 1. **Clone the Repository**:
